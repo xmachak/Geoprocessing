@@ -9,7 +9,10 @@ def main():
         #ags env params
         env.overwriteOutput = True
         env.workspace = r"F:\arcgisresources\GeocodeAndIdentity\prod_data.gdb"
-        env.scratchWorkspace = r"F:\arcgisresources\GeocodeAndIdentity\scratch"
+        if env.scratchWorkspace is None:
+			env.scratchWorkspace = r"F:\arcgisresources\GeocodeAndIdentity\scratch"
+        else:
+			pass
         #the polygon feature class' to perform Identity on
         dacFeatures = "ca_dacs_Project"
         #the feature class to use as a template for a spatial reference for the geocoding WGS84 X,Y location values
